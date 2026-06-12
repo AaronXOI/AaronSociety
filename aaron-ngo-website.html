@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaron Education Welfare Society (Regd.) - Saharanpur</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#fff;color:#111;overflow-x:hidden}
+:root{--blue:#1565c0;--blue2:#1976d2;--gold:#f9a825;--light:#e3f2fd;--dark:#0d47a1}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid #e0e0e0;padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo-area{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-svg{width:50px;height:50px;flex-shrink:0}
+.logo-text-area{display:flex;flex-direction:column}
+.logo-name{font-size:13px;font-weight:800;color:#0d47a1;line-height:1.2;letter-spacing:-0.3px}
+.logo-sub{font-size:10px;font-weight:600;color:#1976d2;letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:#555;text-decoration:none;font-size:13.5px;font-weight:500;transition:color 0.2s;padding:4px 0;border-bottom:2px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:#1565c0;border-bottom-color:#1565c0}
+.nav-cta{background:#1565c0;color:#fff;padding:9px 22px;border-radius:6px;font-size:13.5px;font-weight:700;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:#0d47a1}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:#333;border-radius:2px;transition:all 0.3s}
+
+/* PAGES */
+.page{display:none}
+.page.active{display:block}
+
+/* HERO */
+.hero{min-height:100vh;padding:100px 2rem 60px;background:linear-gradient(160deg,#e3f2fd 0%,#ffffff 60%)}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #bbdefb;color:#1565c0;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 16px;border-radius:50px;margin-bottom:1.5rem}
+.hero-tag span{width:8px;height:8px;background:#f9a825;border-radius:50%;display:inline-block}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:900;line-height:1.08;letter-spacing:-2px;color:#0d1b2a;margin-bottom:1.25rem}
+.hero h1 em{font-style:normal;color:#1565c0}
+.hero-desc{color:#555;font-size:1.05rem;line-height:1.75;margin-bottom:2rem;max-width:500px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-blue{background:#1565c0;color:#fff;padding:14px 28px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:all 0.2s;display:inline-block;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+.btn-blue:hover{background:#0d47a1;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#1565c0;padding:13px 28px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;border:2px solid #1565c0;transition:all 0.2s;display:inline-block}
+.btn-outline:hover{background:#e3f2fd}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0}
+.stat{background:#fff;padding:1.25rem;text-align:center}
+.stat-num{font-size:1.9rem;font-weight:900;color:#1565c0;letter-spacing:-1px;line-height:1}
+.stat-label{font-size:11px;color:#888;font-weight:600;margin-top:5px;text-transform:uppercase;letter-spacing:0.8px}
+.hero-visual{display:flex;flex-direction:column;gap:16px}
+.focus-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.focus-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1.25rem;display:flex;align-items:flex-start;gap:12px;transition:all 0.2s;cursor:default}
+.focus-card:hover{border-color:#1565c0;box-shadow:0 4px 20px rgba(21,101,192,0.08)}
+.focus-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.focus-card h4{font-size:13px;font-weight:700;color:#111;margin-bottom:3px}
+.focus-card p{font-size:12px;color:#888;line-height:1.4}
+.hero-award{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px}
+.hero-award-icon{font-size:24px}
+.hero-award p{font-size:13px;color:#555;line-height:1.4}<br>.hero-award strong{color:#111;font-weight:700}
+
+/* SECTION COMMONS */
+section{padding:80px 2rem}
+.container{max-width:1200px;margin:0 auto}
+.sec-label{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#1565c0;margin-bottom:0.75rem}
+.sec-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-1.5px;line-height:1.1;color:#0d1b2a;margin-bottom:1rem}
+.sec-title em{font-style:normal;color:#1565c0}
+.sec-sub{color:#666;font-size:1rem;line-height:1.75;max-width:540px}
+.sec-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+
+/* ABOUT */
+.about{background:#fafafa}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{color:#555;font-size:1rem;line-height:1.8;margin-bottom:1rem}
+.timeline{margin-top:2rem}
+.tl-item{display:flex;gap:1rem;padding:0.9rem 0;border-bottom:1px solid #f0f0f0}
+.tl-dot{width:10px;height:10px;background:#1565c0;border-radius:50%;flex-shrink:0;margin-top:5px}
+.tl-year{font-size:12px;font-weight:800;color:#1565c0;width:36px;flex-shrink:0;margin-top:2px}
+.tl-text{font-size:14px;color:#666;line-height:1.5}
+.about-card{background:#fff;border:1px solid #e0e0e0;border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#1565c0,#f9a825)}
+.about-bignum{font-size:5rem;font-weight:900;color:#1565c0;letter-spacing:-4px;line-height:1}
+.about-bigtext{font-size:14px;color:#888;margin-top:4px;margin-bottom:2rem}
+.founder-card{display:flex;align-items:center;gap:14px;padding:1rem;background:#f5f9ff;border-radius:10px;margin-top:1rem}
+.founder-avatar{width:50px;height:50px;background:#1565c0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;flex-shrink:0}
+.founder-name{font-size:15px;font-weight:700;color:#111}
+.founder-role{font-size:12px;color:#888;font-weight:500}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.5rem}
+.value-pill{background:#e3f2fd;color:#0d47a1;font-size:12px;font-weight:700;padding:8px 14px;border-radius:8px;text-align:center}
+
+/* WORK */
+.work{background:#fff}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;border-radius:16px;overflow:hidden;border:1px solid #e0e0e0;margin-bottom:3rem}
+.pillar{background:#fff;padding:2rem 1.5rem;transition:background 0.2s}
+.pillar:hover{background:#f5f9ff}
+.pillar-icon{font-size:2.5rem;margin-bottom:1rem}
+.pillar h3{font-size:15px;font-weight:800;color:#111;margin-bottom:0.5rem}
+.pillar p{font-size:13px;color:#777;line-height:1.6}
+.pillar-count{display:inline-block;margin-top:1rem;font-size:11px;font-weight:800;color:#1565c0;text-transform:uppercase;letter-spacing:1px;background:#e3f2fd;padding:4px 10px;border-radius:4px}
+.reach-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e0e0e0;border-radius:16px;overflow:hidden;border:1px solid #e0e0e0}
+.reach-box{background:#fff;padding:2.5rem}
+.reach-box h3{font-size:1.1rem;font-weight:800;color:#111;margin-bottom:0.5rem}
+.reach-box p{font-size:14px;color:#888;margin-bottom:1.5rem}
+.bar-row{margin-bottom:1rem}
+.bar-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px;color:#555}
+.bar-track{background:#f0f0f0;border-radius:4px;height:5px}
+.bar-fill{background:#1565c0;border-radius:4px;height:5px}
+.vol-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
+.vol-item{display:flex;align-items:center;gap:10px;font-size:14px;color:#555}
+.vol-check{color:#1565c0;font-weight:800;font-size:16px}
+
+/* EVENTS */
+.events{background:#fafafa}
+.events-list{display:flex;flex-direction:column;gap:1px;background:#e0e0e0;border-radius:16px;overflow:hidden;border:1px solid #e0e0e0}
+.event-row{background:#fff;padding:1.5rem 2rem;display:grid;grid-template-columns:80px 1fr auto;gap:1.5rem;align-items:center;transition:background 0.2s}
+.event-row:hover{background:#f5f9ff}
+.ev-date{text-align:center}
+.ev-day{font-size:2rem;font-weight:900;color:#1565c0;line-height:1;letter-spacing:-2px}
+.ev-month{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:1px}
+.ev-title{font-size:15px;font-weight:700;color:#111;margin-bottom:4px}
+.ev-meta{font-size:13px;color:#888;display:flex;gap:1.5rem}
+.badge-upcoming{background:#e3f2fd;color:#1565c0;font-size:11px;font-weight:800;padding:4px 10px;border-radius:4px;border:1px solid #bbdefb;white-space:nowrap}
+.badge-done{background:#f5f5f5;color:#999;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;white-space:nowrap}
+.filter-row{display:flex;gap:8px}
+.filter-btn{padding:8px 18px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;border:1px solid #e0e0e0;background:#fff;color:#888;transition:all 0.2s;font-family:'Inter',sans-serif}
+.filter-btn.active,.filter-btn:hover{background:#1565c0;color:#fff;border-color:#1565c0}
+
+/* GALLERY */
+.gallery{background:#fff}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:2rem}
+.gal-item{border-radius:12px;overflow:hidden;background:#f5f5f5;border:1px solid #eee;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#ccc;cursor:pointer;position:relative;transition:all 0.3s}
+.gal-item:hover{transform:scale(1.01);border-color:#1565c0}
+.gal-item.tall{grid-row:span 2;aspect-ratio:auto;min-height:300px}
+.gal-overlay{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(0,0,0,0.65));font-size:12px;font-weight:700;color:#fff;opacity:0;transition:opacity 0.3s}
+.gal-item:hover .gal-overlay{opacity:1}
+.gal-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px}
+.gal-placeholder span{font-size:12px;color:#bbb}
+
+/* NEWS */
+.news{background:#fafafa}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.news-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;transition:all 0.2s;cursor:pointer}
+.news-card:hover{border-color:#1565c0;box-shadow:0 4px 20px rgba(21,101,192,0.08);transform:translateY(-2px)}
+.news-thumb{background:#e3f2fd;height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;border-bottom:1px solid #e0e0e0}
+.news-body{padding:1.25rem}
+.news-cat{font-size:11px;font-weight:800;color:#1565c0;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.news-title{font-size:14px;font-weight:700;color:#111;line-height:1.5;margin-bottom:6px}
+.news-date{font-size:12px;color:#bbb}
+
+/* DONATE */
+.donate{background:#fff}
+.donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.impact-list{display:flex;flex-direction:column;gap:12px;margin-top:2rem}
+.impact-item{background:#f5f9ff;border:1px solid #e3f0ff;border-radius:12px;padding:1.25rem}
+.impact-item h4{font-size:14px;font-weight:700;color:#0d47a1;margin-bottom:4px}
+.impact-item p{font-size:13px;color:#888}
+.impact-bar-track{background:#e0e0e0;border-radius:4px;height:4px;margin-top:10px}
+.impact-bar-fill{background:#1565c0;border-radius:4px;height:4px}
+.donate-box{background:#fff;border:1.5px solid #e0e0e0;border-radius:16px;padding:2rem}
+.donate-box h3{font-size:1rem;font-weight:800;color:#111;margin-bottom:1.25rem}
+.amount-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.25rem}
+.amt-btn{background:#f5f5f5;border:1.5px solid #e0e0e0;color:#333;padding:13px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.2s;text-align:center;font-family:'Inter',sans-serif}
+.amt-btn:hover,.amt-btn.active{background:#e3f2fd;border-color:#1565c0;color:#1565c0}
+.donate-form input,.donate-form select{width:100%;border:1.5px solid #e0e0e0;color:#111;padding:12px 16px;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;margin-bottom:10px;outline:none;background:#fff;transition:border-color 0.2s}
+.donate-form input:focus,.donate-form select:focus{border-color:#1565c0}
+.donate-submit{width:100%;background:#1565c0;color:#fff;padding:14px;border:none;border-radius:8px;font-size:15px;font-weight:800;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s}
+.donate-submit:hover{background:#0d47a1}
+.tax-note{font-size:12px;color:#aaa;text-align:center;margin-top:10px}
+
+/* CONTACT */
+.contact{background:#fafafa}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.contact-items{display:flex;flex-direction:column;gap:1.25rem;margin-top:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:14px}
+.contact-icon-box{width:44px;height:44px;background:#e3f2fd;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.contact-val{font-size:14px;color:#333;font-weight:500}
+.socials{display:flex;gap:10px;margin-top:1.5rem}
+.social-btn{background:#fff;border:1px solid #e0e0e0;color:#555;width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;text-decoration:none;transition:all 0.2s}
+.social-btn:hover{border-color:#1565c0;color:#1565c0;background:#e3f2fd}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;border:1.5px solid #e0e0e0;color:#111;padding:12px 16px;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;margin-bottom:10px;outline:none;background:#fff;resize:vertical;transition:border-color 0.2s}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:#1565c0}
+.contact-submit{background:#1565c0;color:#fff;padding:12px 28px;border:none;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s}
+.contact-submit:hover{background:#0d47a1}
+
+/* FOOTER */
+footer{background:#0d1b2a;color:#fff;padding:3rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.footer-desc{font-size:13px;color:#aaa;line-height:1.7;max-width:280px}
+.footer-heading{font-size:12px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-links a{color:#aaa;text-decoration:none;font-size:13px;transition:color 0.2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{max-width:1200px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid #1e2e3e;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
+.footer-bottom p{font-size:12px;color:#555}
+.footer-bottom span{color:#f9a825}
+
+/* EDIT MODE */
+.edit-bar{display:none;position:fixed;bottom:20px;right:20px;z-index:9999;background:#1565c0;border-radius:12px;padding:14px 20px;box-shadow:0 4px 30px rgba(21,101,192,0.3);display:flex;align-items:center;gap:12px}
+.edit-bar.hidden{display:none!important}
+.edit-bar p{font-size:13px;font-weight:700;color:#fff}
+.edit-bar-btns{display:flex;gap:8px}
+.edit-save-btn{background:#fff;color:#1565c0;border:none;padding:7px 16px;border-radius:6px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Inter',sans-serif}
+.edit-cancel-btn{background:rgba(255,255,255,0.2);color:#fff;border:none;padding:7px 16px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif}
+[contenteditable="true"]{outline:2px dashed #1565c0;outline-offset:2px;border-radius:4px;cursor:text;min-width:20px;display:inline-block}
+[contenteditable="true"]:focus{outline:2px solid #1565c0;background:rgba(21,101,192,0.04)}
+
+/* ADMIN LOGIN */
+.admin-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:10000;align-items:center;justify-content:center}
+.admin-overlay.show{display:flex}
+.admin-box{background:#fff;border-radius:16px;padding:2.5rem;width:360px;max-width:90vw}
+.admin-box h2{font-size:1.25rem;font-weight:800;color:#111;margin-bottom:0.5rem}
+.admin-box p{font-size:14px;color:#888;margin-bottom:1.5rem}
+.admin-box input{width:100%;border:1.5px solid #e0e0e0;padding:12px 16px;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;outline:none;margin-bottom:10px}
+.admin-box input:focus{border-color:#1565c0}
+.admin-login-btn{width:100%;background:#1565c0;color:#fff;border:none;padding:13px;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Inter',sans-serif}
+.admin-error{font-size:13px;color:#e53935;margin-top:8px;display:none}
+.admin-close{float:right;background:none;border:none;font-size:20px;cursor:pointer;color:#aaa;margin-top:-8px}
+
+/* MOBILE */
+@media(max-width:768px){
+.nav-links,.nav-cta{display:none}
+.hamburger{display:flex}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #e0e0e0;padding:1rem 2rem;z-index:999}
+.mobile-menu.open{display:flex;flex-direction:column;gap:1rem}
+.mobile-menu a{color:#333;text-decoration:none;font-size:15px;font-weight:600;padding:8px 0;border-bottom:1px solid #f5f5f5}
+.hero-inner{grid-template-columns:1fr;gap:2rem}
+.about-grid,.work-grid,.donate-grid,.contact-grid,.reach-grid{grid-template-columns:1fr}
+.pillars{grid-template-columns:1fr 1fr}
+.focus-cards{grid-template-columns:1fr 1fr}
+.news-grid{grid-template-columns:1fr}
+.gal-grid{grid-template-columns:1fr 1fr}
+.footer-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ADMIN LOGIN OVERLAY -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-box">
+    <button class="admin-close" onclick="document.getElementById('adminOverlay').classList.remove('show')">×</button>
+    <h2>Admin Login</h2>
+    <p>Enter your password to edit website content</p>
+    <input type="password" id="adminPassword" placeholder="Enter password" onkeydown="if(event.key==='Enter')checkAdmin()">
+    <button class="admin-login-btn" onclick="checkAdmin()">Login & Edit</button>
+    <p class="admin-error" id="adminError">Incorrect password. Try again.</p>
+  </div>
+</div>
+
+<!-- EDIT BAR -->
+<div class="edit-bar hidden" id="editBar">
+  <p>✏️ Edit Mode — click any text to edit</p>
+  <div class="edit-bar-btns">
+    <button class="edit-save-btn" onclick="saveChanges()">Save Changes</button>
+    <button class="edit-cancel-btn" onclick="cancelEdit()">Exit</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" onclick="showPage('home',this)" class="logo-area">
+      <svg class="logo-svg" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="25" cy="25" r="24" fill="#1565c0" stroke="#0d47a1" stroke-width="1"/>
+        <circle cx="25" cy="25" r="17" fill="#42a5f5"/>
+        <text x="25" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="10" fill="#fff" letter-spacing="-0.5">AEWS</text>
+        <circle cx="25" cy="25" r="21" fill="none" stroke="#f9a825" stroke-width="2.5"/>
+        <circle cx="25" cy="4.2" r="2.2" fill="#f44336"/>
+        <circle cx="43.5" cy="13" r="2.2" fill="#4caf50"/>
+        <circle cx="43.5" cy="37" r="2.2" fill="#ff9800"/>
+        <circle cx="25" cy="45.8" r="2.2" fill="#9c27b0"/>
+        <circle cx="6.5" cy="37" r="2.2" fill="#00bcd4"/>
+        <circle cx="6.5" cy="13" r="2.2" fill="#e91e63"/>
+      </svg>
+      <div class="logo-text-area">
+        <span class="logo-name">Aaron Education Welfare Society</span>
+        <span class="logo-sub">Regd. · Saharanpur · Est. 2009</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home',this)" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('about',this)">About</a></li>
+      <li><a href="#" onclick="showPage('work',this)">Our Work</a></li>
+      <li><a href="#" onclick="showPage('events',this)">Events</a></li>
+      <li><a href="#" onclick="showPage('gallery',this)">Gallery</a></li>
+      <li><a href="#" onclick="showPage('news',this)">News</a></li>
+      <li><a href="#" onclick="showPage('contact',this)">Contact</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="#" onclick="openAdmin()" class="nav-cta" style="background:#f9a825;color:#111">Admin</a>
+      <a href="#" onclick="showPage('donate',this)" class="nav-cta">Donate</a>
+      <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="showPage('home');toggleMenu()">Home</a>
+    <a href="#" onclick="showPage('about');toggleMenu()">About</a>
+    <a href="#" onclick="showPage('work');toggleMenu()">Our Work</a>
+    <a href="#" onclick="showPage('events');toggleMenu()">Events</a>
+    <a href="#" onclick="showPage('gallery');toggleMenu()">Gallery</a>
+    <a href="#" onclick="showPage('news');toggleMenu()">News</a>
+    <a href="#" onclick="showPage('contact');toggleMenu()">Contact</a>
+    <a href="#" onclick="showPage('donate');toggleMenu()" style="color:#1565c0">Donate Now</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag"><span></span> Est. 2009 &nbsp;·&nbsp; Saharanpur, UP</div>
+        <h1>Empowering <em>Lives</em>,<br>Building a Better<br>Tomorrow</h1>
+        <p class="hero-desc">Aaron Education Welfare Society is a registered, multi-purpose NGO working for children's education, women's empowerment, health awareness, and environmental protection across Uttar Pradesh.</p>
+        <div class="hero-btns">
+          <a href="#" onclick="showPage('donate')" class="btn-blue">Support Our Cause →</a>
+          <a href="#" onclick="showPage('about')" class="btn-outline">Who We Are</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years Active</div></div>
+          <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Lives Touched</div></div>
+          <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Volunteers</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="focus-cards">
+          <div class="focus-card">
+            <div class="focus-icon" style="background:#fce4ec">👩</div>
+            <div><h4>Women Empowerment</h4><p>Skill training, legal aid & awareness</p></div>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon" style="background:#e8f5e9">🌿</div>
+            <div><h4>Environment</h4><p>Tree drives & clean-up campaigns</p></div>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon" style="background:#e3f2fd">📚</div>
+            <div><h4>Education & Youth</h4><p>Free tuition & scholarship support</p></div>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon" style="background:#fff8e1">❤️</div>
+            <div><h4>Health & Welfare</h4><p>Free camps & nutrition drives</p></div>
+          </div>
+        </div>
+        <div class="hero-award">
+          <div class="hero-award-icon">🏛️</div>
+          <p><strong>State Recognised NGO</strong> — Registered under Societies Registration Act, Uttar Pradesh. Working across 12+ districts since 2009.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div id="page-about" class="page">
+  <section style="padding-top:100px;background:#fafafa">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="sec-label">About Us</div>
+          <h2 class="sec-title">Born from a Passion<br>to <em>Serve</em></h2>
+          <p>Aaron Education Welfare Society was founded in 2009 by Oswin Terence in Saharanpur with a single belief — that every person, regardless of their background, deserves access to education, health, and dignity.</p>
+          <p>What began as a small community initiative has grown into a state-recognised, multi-purpose NGO touching thousands of lives each year. We work on the ground — in villages, schools, hospitals, and forests — alongside the communities we serve.</p>
+          <p>Our society is officially registered under the Societies Registration Act, Uttar Pradesh, and operates with full transparency and accountability.</p>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2009</div><div class="tl-text">Founded by Oswin Terence in Saharanpur, Uttar Pradesh</div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2012</div><div class="tl-text">First major health camp — served 500+ patients in rural Saharanpur</div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2015</div><div class="tl-text">Expanded operations to 5 districts, 3,000+ beneficiaries</div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2019</div><div class="tl-text">Official registration — R/SAH/00848/2019-2020</div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020</div><div class="tl-text">COVID-19 relief — aid distributed to 1,500+ families across UP</div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2024</div><div class="tl-text">10,000+ lives impacted, 200+ active volunteers, 12+ districts</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="about-card">
+            <div class="about-bignum">15+</div>
+            <div class="about-bigtext">Years of unbroken service to Uttar Pradesh</div>
+            <div class="founder-card">
+              <div class="founder-avatar">OT</div>
+              <div>
+                <div class="founder-name">Oswin Terence</div>
+                <div class="founder-role">Founder, Aaron Education Welfare Society</div>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem;padding:1.25rem;background:#f5f9ff;border-radius:10px;border-left:3px solid #1565c0">
+              <p style="font-size:14px;color:#555;line-height:1.7;font-style:italic">"Our mission is simple — to ensure that no child goes without education, no woman is denied her rights, and no family suffers from preventable illness."</p>
+              <p style="font-size:12px;color:#aaa;margin-top:8px;font-weight:700">— Oswin Terence, Founder</p>
+            </div>
+            <div class="values-grid">
+              <div class="value-pill">Women Empowerment</div>
+              <div class="value-pill">Education & Youth</div>
+              <div class="value-pill">Environment</div>
+              <div class="value-pill">Health & Welfare</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- OUR WORK -->
+<div id="page-work" class="page">
+  <section style="padding-top:100px">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <div class="sec-label">What We Do</div>
+          <h2 class="sec-title">Four Pillars of <em>Our Action</em></h2>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">👩‍🎓</div>
+          <h3>Women Empowerment</h3>
+          <p>Vocational training, self-defence workshops, legal awareness camps, and support for survivors of domestic violence across rural UP.</p>
+          <div class="pillar-count">400+ Women Trained</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🌳</div>
+          <h3>Environment</h3>
+          <p>Tree plantation drives, river clean-ups, plastic-free awareness campaigns, and eco-club formation in 30+ schools.</p>
+          <div class="pillar-count">50K+ Trees Planted</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📖</div>
+          <h3>Education & Youth</h3>
+          <p>Free coaching centres, scholarship facilitation, menstrual hygiene education, and school dropout prevention programmes.</p>
+          <div class="pillar-count">1,500+ Students</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🏥</div>
+          <h3>Health & Welfare</h3>
+          <p>Free medical camps, blood donation drives, nutrition distribution, mental health awareness, and medicine camps.</p>
+          <div class="pillar-count">80+ Health Camps</div>
+        </div>
+      </div>
+      <div class="reach-grid">
+        <div class="reach-box">
+          <h3>Our Reach</h3>
+          <p>Active across 12+ districts of Uttar Pradesh with 200+ volunteers and 15+ partner organisations.</p>
+          <div class="bar-row"><div class="bar-label"><span>Saharanpur</span><span style="color:#1565c0;font-weight:700">HQ</span></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>Muzaffarnagar</span><span style="color:#888">Active</span></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>Meerut</span><span style="color:#888">Active</span></div><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+          <div class="bar-row"><div class="bar-label"><span>9 more districts</span><span style="color:#bbb">Expanding</span></div><div class="bar-track"><div class="bar-fill" style="width:35%;background:#bbb"></div></div></div>
+        </div>
+        <div class="reach-box">
+          <h3>Join as Volunteer</h3>
+          <p>We welcome students, professionals, and anyone passionate about change. No experience required.</p>
+          <div class="vol-list">
+            <div class="vol-item"><span class="vol-check">✓</span> Weekend & part-time options available</div>
+            <div class="vol-item"><span class="vol-check">✓</span> Full training provided by AEWS</div>
+            <div class="vol-item"><span class="vol-check">✓</span> Certificate of service issued</div>
+            <div class="vol-item"><span class="vol-check">✓</span> Be part of real, visible change</div>
+          </div>
+          <a href="#" onclick="showPage('contact')" class="btn-blue" style="font-size:14px;padding:12px 24px">Register as Volunteer →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- EVENTS -->
+<div id="page-events" class="page">
+  <section style="padding-top:100px;background:#fafafa">
+    <div class="container">
+      <div class="sec-header">
+        <div>
+          <div class="sec-label">Events & Activities</div>
+          <h2 class="sec-title">What's <em>Happening</em></h2>
+        </div>
+        <div class="filter-row">
+          <button class="filter-btn active" onclick="filterEvts('all',this)">All</button>
+          <button class="filter-btn" onclick="filterEvts('upcoming',this)">Upcoming</button>
+          <button class="filter-btn" onclick="filterEvts('past',this)">Past</button>
+        </div>
+      </div>
+      <div class="events-list">
+        <div class="event-row" data-type="upcoming">
+          <div class="ev-date"><div class="ev-day">22</div><div class="ev-month">Jun '26</div></div>
+          <div><div class="ev-title">Annual Blood Donation Camp</div><div class="ev-meta"><span>📍 Civil Hospital, Saharanpur</span><span>⏰ 9:00 AM – 4:00 PM</span></div></div>
+          <div class="badge-upcoming">Upcoming</div>
+        </div>
+        <div class="event-row" data-type="upcoming">
+          <div class="ev-date"><div class="ev-day">05</div><div class="ev-month">Jul '26</div></div>
+          <div><div class="ev-title">Van Mahotsav Tree Plantation Drive</div><div class="ev-meta"><span>📍 Shibali Forest, Saharanpur</span><span>⏰ 7:00 AM – 12:00 PM</span></div></div>
+          <div class="badge-upcoming">Upcoming</div>
+        </div>
+        <div class="event-row" data-type="upcoming">
+          <div class="ev-date"><div class="ev-day">15</div><div class="ev-month">Jul '26</div></div>
+          <div><div class="ev-title">Women Self-Defence Workshop</div><div class="ev-meta"><span>📍 AEWS Office, Saharanpur</span><span>⏰ 10:00 AM – 5:00 PM</span></div></div>
+          <div class="badge-upcoming">Upcoming</div>
+        </div>
+        <div class="event-row" data-type="past">
+          <div class="ev-date"><div class="ev-day">05</div><div class="ev-month">Jun '26</div></div>
+          <div><div class="ev-title">World Environment Day Clean-Up Drive</div><div class="ev-meta"><span>📍 Yamuna Riverbank</span><span>180 volunteers participated</span></div></div>
+          <div class="badge-done">Completed</div>
+        </div>
+        <div class="event-row" data-type="past">
+          <div class="ev-date"><div class="ev-day">28</div><div class="ev-month">May '26</div></div>
+          <div><div class="ev-title">Free Eye Check-up Camp</div><div class="ev-meta"><span>📍 Gangoh Block, UP</span><span>Served 320 patients</span></div></div>
+          <div class="badge-done">Completed</div>
+        </div>
+        <div class="event-row" data-type="past">
+          <div class="ev-date"><div class="ev-day">14</div><div class="ev-month">Mar '26</div></div>
+          <div><div class="ev-title">Blood Donation Camp — 180 Units Collected</div><div class="ev-meta"><span>📍 District Hospital, Saharanpur</span><span>200+ donors attended</span></div></div>
+          <div class="badge-done">Completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- GALLERY -->
+<div id="page-gallery" class="page">
+  <section style="padding-top:100px">
+    <div class="container">
+      <div class="sec-label">Gallery</div>
+      <h2 class="sec-title">Our Work in <em>Pictures</em></h2>
+      <p class="sec-sub">A glimpse of our activities across Saharanpur and Uttar Pradesh. Replace these placeholders with real photos from your events.</p>
+      <div class="gal-grid">
+        <div class="gal-item tall" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)"><div class="gal-placeholder"><span style="font-size:3rem">🌳</span><span>Tree Plantation Drive</span></div><div class="gal-overlay">Van Mahotsav 2025 — 1000 trees planted</div></div>
+        <div class="gal-item" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0)"><div class="gal-placeholder"><span style="font-size:2.5rem">👩</span><span>Women's Workshop</span></div><div class="gal-overlay">Self-Defence Training Workshop</div></div>
+        <div class="gal-item" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)"><div class="gal-placeholder"><span style="font-size:2.5rem">📚</span><span>Free Coaching</span></div><div class="gal-overlay">Free Coaching Centre, Saharanpur</div></div>
+        <div class="gal-item" style="background:linear-gradient(135deg,#fff8e1,#ffecb3)"><div class="gal-placeholder"><span style="font-size:2.5rem">🏥</span><span>Health Camp</span></div><div class="gal-overlay">Free Medical Camp — Gangoh Block</div></div>
+        <div class="gal-item" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0)"><div class="gal-placeholder"><span style="font-size:2.5rem">🩸</span><span>Blood Donation</span></div><div class="gal-overlay">Annual Blood Donation Drive</div></div>
+        <div class="gal-item tall" style="background:linear-gradient(135deg,#ede7f6,#d1c4e9)"><div class="gal-placeholder"><span style="font-size:3rem">🎓</span><span>Prize Distribution</span></div><div class="gal-overlay">Annual Prize Distribution Ceremony</div></div>
+        <div class="gal-item" style="background:linear-gradient(135deg,#e0f2f1,#b2dfdb)"><div class="gal-placeholder"><span style="font-size:2.5rem">🍱</span><span>Nutrition Drive</span></div><div class="gal-overlay">Nutrition Distribution Drive</div></div>
+        <div class="gal-item" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)"><div class="gal-placeholder"><span style="font-size:2.5rem">🌊</span><span>River Clean-Up</span></div><div class="gal-overlay">Yamuna River Clean-Up Drive</div></div>
+      </div>
+      <p style="text-align:center;color:#bbb;font-size:13px;margin-top:1.5rem">To add real photos, contact your admin or use Edit Mode to update image links</p>
+    </div>
+  </section>
+</div>
+
+<!-- NEWS -->
+<div id="page-news" class="page">
+  <section style="padding-top:100px;background:#fafafa">
+    <div class="container">
+      <div class="sec-label">News & Blog</div>
+      <h2 class="sec-title">Latest <em>Updates</em></h2>
+      <div class="news-grid" style="margin-top:2.5rem">
+        <div class="news-card"><div class="news-thumb">🩺</div><div class="news-body"><div class="news-cat">Health</div><div class="news-title">Free Eye Check-up Camp Serves 320 Patients in Gangoh Block</div><div class="news-date">28 May 2026</div></div></div>
+        <div class="news-card"><div class="news-thumb">🌱</div><div class="news-body"><div class="news-cat">Environment</div><div class="news-title">AEWS Plants 1,000 Trees on World Environment Day 2026</div><div class="news-date">5 Jun 2026</div></div></div>
+        <div class="news-card"><div class="news-thumb">👩</div><div class="news-body"><div class="news-cat">Women</div><div class="news-title">60 Women Complete Vocational Skill Development Programme</div><div class="news-date">10 May 2026</div></div></div>
+        <div class="news-card"><div class="news-thumb">📚</div><div class="news-body"><div class="news-cat">Education</div><div class="news-title">AEWS Coaching Centre Helps 45 Students Clear Class 10 Board Exams</div><div class="news-date">1 Apr 2026</div></div></div>
+        <div class="news-card"><div class="news-thumb">🩸</div><div class="news-body"><div class="news-cat">Health</div><div class="news-title">Blood Donation Camp Collects 180 Units for Local Hospitals</div><div class="news-date">14 Mar 2026</div></div></div>
+        <div class="news-card"><div class="news-thumb">🏆</div><div class="news-body"><div class="news-cat">Recognition</div><div class="news-title">Aaron Education Welfare Society Recognised as Leading NGO in UP</div><div class="news-date">26 Jan 2026</div></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- DONATE -->
+<div id="page-donate" class="page">
+  <section style="padding-top:100px">
+    <div class="container">
+      <div class="donate-grid">
+        <div>
+          <div class="sec-label">Support Us</div>
+          <h2 class="sec-title">Your Donation<br><em>Changes Lives</em></h2>
+          <p class="sec-sub">Every rupee you give directly funds medical camps, books for children, tree saplings, and livelihood training for women in Uttar Pradesh.</p>
+          <div class="impact-list">
+            <div class="impact-item"><h4>₹500 — feeds a family for a week</h4><p>Nutrition drive for underprivileged households in rural UP</p><div class="impact-bar-track"><div class="impact-bar-fill" style="width:85%"></div></div></div>
+            <div class="impact-item"><h4>₹1,000 — plants 20 trees</h4><p>Full sapling + care cost for one Van Mahotsav planting cycle</p><div class="impact-bar-track"><div class="impact-bar-fill" style="width:72%"></div></div></div>
+            <div class="impact-item"><h4>₹2,000 — educates one child</h4><p>3 months of free coaching + full study material provided</p><div class="impact-bar-track"><div class="impact-bar-fill" style="width:65%"></div></div></div>
+            <div class="impact-item"><h4>₹5,000 — trains one woman</h4><p>Complete vocational skill course + certificate of completion</p><div class="impact-bar-track"><div class="impact-bar-fill" style="width:55%"></div></div></div>
+          </div>
+        </div>
+        <div class="donate-box">
+          <h3>Choose an Amount</h3>
+          <div class="amount-grid">
+            <div class="amt-btn" onclick="selectAmt(this)">₹500</div>
+            <div class="amt-btn active" onclick="selectAmt(this)">₹1,000</div>
+            <div class="amt-btn" onclick="selectAmt(this)">₹2,000</div>
+            <div class="amt-btn" onclick="selectAmt(this)">₹5,000</div>
+            <div class="amt-btn" onclick="selectAmt(this)">₹10,000</div>
+            <div class="amt-btn" onclick="selectAmt(this)">Custom</div>
+          </div>
+          <div class="donate-form">
+            <input type="text" placeholder="Full Name" />
+            <input type="email" placeholder="Email Address" />
+            <input type="tel" placeholder="Phone Number" />
+            <select>
+              <option>Donate towards: Any Cause</option>
+              <option>Women Empowerment</option>
+              <option>Environment</option>
+              <option>Education & Youth</option>
+              <option>Health & Welfare</option>
+            </select>
+            <button class="donate-submit" id="donateBtn" onclick="alert('Thank you for your generosity! Payment gateway integration coming soon. For now, please call us at +91 98970 97568 to donate.')">Donate ₹1,000 Securely →</button>
+          </div>
+          <p class="tax-note">80G Tax Exemption available · Registered NGO · 100% Transparent</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <section style="padding-top:100px;background:#fafafa">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <div class="sec-label">Contact Us</div>
+          <h2 class="sec-title">Get in <em>Touch</em></h2>
+          <p class="sec-sub">Reach out for partnerships, volunteering, donations, or media enquiries. We respond within 24 hours.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon-box">📍</div>
+              <div><div class="contact-label">Address</div><div class="contact-val">Punjabi Bagh, Hakikat Nagar, Saharanpur, Uttar Pradesh — 247001</div></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box">📞</div>
+              <div><div class="contact-label">Phone</div><div class="contact-val">+91 98970 97568 &nbsp;|&nbsp; +91 90586 99456</div></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box">✉️</div>
+              <div><div class="contact-label">Email</div><div class="contact-val">info@aaronngo.org</div></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box">🕐</div>
+              <div><div class="contact-label">Office Hours</div><div class="contact-val">Monday – Saturday, 10:00 AM – 6:00 PM</div></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box">🏛️</div>
+              <div><div class="contact-label">Registration</div><div class="contact-val">R/SAH/00848/2019-2020 · AEWS (Regd.)</div></div>
+            </div>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/p/Aaron-Education-Welfare-Society-100064561757428/" target="_blank" class="social-btn">f</a>
+            <a href="https://www.youtube.com/@aaroneducationwelfaresocie8194" target="_blank" class="social-btn">▶</a>
+            <a href="#" class="social-btn">in</a>
+            <a href="#" class="social-btn">tw</a>
+          </div>
+        </div>
+        <div>
+          <div class="contact-form">
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Email Address" />
+            <input type="tel" placeholder="Phone Number" />
+            <select>
+              <option>Subject: General Enquiry</option>
+              <option>Volunteer Registration</option>
+              <option>Donation / Sponsorship</option>
+              <option>Media / Press</option>
+              <option>Partnership / Collaboration</option>
+            </select>
+            <textarea placeholder="Your Message" rows="5"></textarea>
+            <button class="contact-submit" onclick="alert('Thank you! We will get back to you within 24 hours. You can also call us directly at +91 98970 97568.')">Send Message →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER (shown on all pages) -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <svg width="40" height="40" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="25" r="24" fill="#1565c0"/>
+          <circle cx="25" cy="25" r="17" fill="#42a5f5"/>
+          <text x="25" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="10" fill="#fff">AEWS</text>
+          <circle cx="25" cy="25" r="21" fill="none" stroke="#f9a825" stroke-width="2"/>
+        </svg>
+        <div>
+          <div style="font-weight:800;font-size:14px;color:#fff">Aaron Education Welfare Society</div>
+          <div style="font-size:11px;color:#aaa">Regd. · Saharanpur · Est. 2009</div>
+        </div>
+      </div>
+      <p class="footer-desc">A registered, multi-purpose NGO working for education, women empowerment, health, and environment across Uttar Pradesh since 2009.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+        <li><a href="#" onclick="showPage('work')">Our Work</a></li>
+        <li><a href="#" onclick="showPage('events')">Events</a></li>
+        <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+        <li><a href="#" onclick="showPage('news')">News & Blog</a></li>
+        <li><a href="#" onclick="showPage('donate')">Donate</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="#">Punjabi Bagh, Hakikat Nagar</a></li>
+        <li><a href="#">Saharanpur, UP — 247001</a></li>
+        <li><a href="tel:+919897097568">+91 98970 97568</a></li>
+        <li><a href="tel:+919058699456">+91 90586 99456</a></li>
+        <li><a href="mailto:info@aaronngo.org">info@aaronngo.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <span>Aaron Education Welfare Society (Regd.)</span> · All Rights Reserved</p>
+    <p>Reg. No: R/SAH/00848/2019-2020 · 80G Tax Exemption</p>
+  </div>
+</footer>
+
+<script>
+const ADMIN_PASS = "aaron2009";
+
+function showPage(name, el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const pg = document.getElementById('page-'+name);
+  if(pg) pg.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  if(el && el.classList) el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function filterEvts(type, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.event-row').forEach(row=>{
+    row.style.display = (type==='all'||row.dataset.type===type) ? 'grid' : 'none';
+  });
+}
+
+function selectAmt(btn){
+  document.querySelectorAll('.amt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const db = document.getElementById('donateBtn');
+  if(db) db.textContent = btn.textContent!=='Custom' ? 'Donate '+btn.textContent+' Securely →' : 'Donate Securely →';
+}
+
+function openAdmin(){
+  document.getElementById('adminOverlay').classList.add('show');
+  document.getElementById('adminPassword').value='';
+  document.getElementById('adminError').style.display='none';
+  setTimeout(()=>document.getElementById('adminPassword').focus(),100);
+}
+
+function checkAdmin(){
+  const pw = document.getElementById('adminPassword').value;
+  if(pw === ADMIN_PASS){
+    document.getElementById('adminOverlay').classList.remove('show');
+    enableEditMode();
+  } else {
+    document.getElementById('adminError').style.display='block';
+  }
+}
+
+function enableEditMode(){
+  document.getElementById('editBar').classList.remove('hidden');
+  const editables = document.querySelectorAll('h1,h2,h3,h4,.hero-desc,.about-text p,.tl-text,.ev-title,.ev-meta,.news-title,.impact-item h4,.impact-item p,.contact-val,.sec-sub,.pillar p,.footer-desc');
+  editables.forEach(el=>{
+    el.setAttribute('contenteditable','true');
+    el.setAttribute('data-original', el.innerHTML);
+  });
+}
+
+function saveChanges(){
+  document.querySelectorAll('[contenteditable="true"]').forEach(el=>{
+    el.removeAttribute('contenteditable');
+    el.removeAttribute('data-original');
+  });
+  document.getElementById('editBar').classList.add('hidden');
+  alert('Changes saved! When you download this file, your edits will be inside it. Re-upload to GitHub to update your live site.');
+}
+
+function cancelEdit(){
+  document.querySelectorAll('[contenteditable="true"]').forEach(el=>{
+    el.innerHTML = el.getAttribute('data-original') || el.innerHTML;
+    el.removeAttribute('contenteditable');
+    el.removeAttribute('data-original');
+  });
+  document.getElementById('editBar').classList.add('hidden');
+}
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').style.boxShadow = window.scrollY>10 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+});
+</script>
+</body>
+</html>
